@@ -1,0 +1,14 @@
+{
+  "id": "two-sum",
+  "title": "Two Sum",
+  "difficulty": "easy",
+  "patterns": ["hashmap"],
+  "signature": "def twoSum(nums: list[int], target: int) -> list[int]:",
+  "samples": [
+    {"input": {"nums":[2,7,11,15], "target":9}, "output":[0,1]}
+  ],
+  "hidden_tests": [
+    {"input": {"nums":[3,3], "target":6}, "output":[0,1]},
+    {"input": {"nums":[0,4,3,0], "target":0}, "output":[0,3]}
+  ]
+}
