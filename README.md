@@ -1,71 +1,62 @@
-🧠 DSA Study Buddy
-An AI-powered study chatbot for learning and practicing Data Structures & Algorithms (DSA) in a beginner-friendly way.
+# 🧠 DSA Study Buddy
 
-This tool lets you:
+An **AI-powered study chatbot** for learning and practicing **Data Structures & Algorithms (DSA)** in a beginner-friendly way.
 
-Learn DSA concepts with simple explanations.
+This tool helps you:
 
-Load coding problems from a local problem bank.
+- 📚 Learn DSA concepts with **simple explanations**.
+- 📝 Load coding problems from a local problem bank.
+- 💡 Get **progressive hints** using a Hugging Face model (1 = small nudge, 4 = pseudocode).
+- ⌨️ Write and test your own solutions directly in the browser.
+- ✅ See **pass/fail results**, runtime, peak memory usage, and **complexity analysis**.
+- 📊 Visualize empirical runtime vs. input size.
+- 📈 *(Future)* Track progress, maintain streaks, and focus on weak topics with spaced repetition.
 
-Get progressive hints using a Hugging Face model (1 = small nudge, 4 = pseudocode).
+---
 
-Write and test your own solutions directly in the browser.
+## 🚀 Features
 
-See pass/fail results, runtime, peak memory usage, and complexity analysis (O-notation).
+- **Gradio web UI** for interactive problem-solving.
+- **Hugging Face API** for AI-generated hints.
+- **Safe code execution** with restrictions on dangerous imports/functions.
+- **Automatic complexity analysis**:
+  - 📄 Static AST-based time complexity guess.
+  - ⚡ Empirical benchmarking with plotted runtime.
+- **Modular architecture**:
+  - `core/` — logic (problems, hints, runner, complexity).
+  - `data/` — problems and concept notes.
 
-Visualize empirical runtime vs. input size.
+---
 
-(Future) Track progress, maintain streaks, and use spaced repetition to focus on weak topics.
+## 📂 Project Structure
 
-🚀 Features
-Gradio web UI for interactive problem-solving.
-
-Hugging Face API for AI-generated hints.
-
-Safe code execution with restrictions on dangerous imports/functions.
-
-Automatic time & space complexity analysis:
-
-Static AST-based guess.
-
-Empirical benchmarking with plotted runtime.
-
-Modular architecture:
-
-core/ for logic (problems, hints, runner, complexity)
-
-data/ for problems and concept notes
-
-📂 Project Structure
-bash
-Copy
-Edit
 .
-├── app.py               # Main Gradio app
+├── app.py # Main Gradio app
 ├── core/
-│   ├── __init__.py
-│   ├── problems.py      # Problem loading
-│   ├── hints.py         # AI hint generation
-│   ├── runner.py        # Safe code execution
-│   ├── complexity.py    # Complexity analysis
-│   └── progress.py      # (Future) Progress tracking
+│ ├── init.py
+│ ├── problems.py # Problem loading
+│ ├── hints.py # AI hint generation
+│ ├── runner.py # Safe code execution
+│ ├── complexity.py # Complexity analysis
+│ └── progress.py # (Future) Progress tracking
 ├── data/
-│   ├── problems/        # Problem JSON files
-│   └── concepts/        # Short concept explanations
+│ ├── problems/ # Problem JSON files
+│ └── concepts/ # Short concept explanations
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-⚙️ Installation & Setup
-1️⃣ Clone the repo
-bash
-Copy
-Edit
+
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repo
+```bash
 git clone https://github.com/<your-username>/DSA_chatbot.git
 cd DSA_chatbot
+
 2️⃣ Create a virtual environment & install dependencies
-bash
-Copy
-Edit
 python -m venv .venv
 
 # Activate the environment
@@ -76,19 +67,15 @@ source .venv/bin/activate
 
 # Install packages
 pip install -r requirements.txt
+
 3️⃣ Configure environment variables
 Create a .env file in the project root:
-
-ini
-Copy
-Edit
 HF_API_TOKEN=hf_your_huggingface_token_here
 HINT_MODEL=mistralai/Mistral-7B-Instruct-v0.3
+
 ▶️ Running the App
-bash
-Copy
-Edit
 python app.py
+
 📌 Usage Flow
 Select a problem from the dropdown and click Load Problem.
 
@@ -120,4 +107,5 @@ Gradio for the interactive UI
 Hugging Face for model inference
 
 Python standard libraries for safe code execution & profiling
+
 
